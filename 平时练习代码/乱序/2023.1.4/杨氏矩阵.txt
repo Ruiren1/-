@@ -1,0 +1,38 @@
+bool  YangSearch(int a[4][4], int target)
+{
+	if (target<a[0][0] || target>a[3][3])
+		return false;
+	int row = 0;                                                                                                                                                                                             
+	int col = 3;
+	while (row < 3 && col >= 0)
+	{
+		if (target == a[row][col])
+		{
+			return true;
+		}
+		else if (target > a[row][col])
+		{
+			row++;
+		}
+		else if (target < a[row][col])
+		{
+			col--;
+		}
+	}
+	return false;
+}
+
+
+
+int main()
+{
+	int target, flag;
+	int a[4][4] = { {1,5,7,9},{4,6,10,15},{8,11,12,19},{14,16,18,21} };
+	scanf("%d", &target);
+	flag=YangSearch(a,target);
+	printf("%d", flag);
+	
+    
+   
+
+}

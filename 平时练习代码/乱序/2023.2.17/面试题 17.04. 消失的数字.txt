@@ -1,0 +1,13 @@
+int missingNumber(int* nums, int numsSize){
+int m=0;
+int i;
+for(i=0;i<numsSize;i++)
+{
+    m^=nums[i];
+}
+for(i=0;i<=numsSize;i++)
+{
+    m^=i;
+}
+    return m;
+}

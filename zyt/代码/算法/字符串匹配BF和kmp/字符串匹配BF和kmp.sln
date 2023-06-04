@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32616.157
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "字符串匹配BF和kmp", "字符串匹配BF和kmp\字符串匹配BF和kmp.vcxproj", "{8790F333-C012-41F4-9D84-3FA1E742525F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8790F333-C012-41F4-9D84-3FA1E742525F}.Debug|x64.ActiveCfg = Debug|x64
+		{8790F333-C012-41F4-9D84-3FA1E742525F}.Debug|x64.Build.0 = Debug|x64
+		{8790F333-C012-41F4-9D84-3FA1E742525F}.Debug|x86.ActiveCfg = Debug|Win32
+		{8790F333-C012-41F4-9D84-3FA1E742525F}.Debug|x86.Build.0 = Debug|Win32
+		{8790F333-C012-41F4-9D84-3FA1E742525F}.Release|x64.ActiveCfg = Release|x64
+		{8790F333-C012-41F4-9D84-3FA1E742525F}.Release|x64.Build.0 = Release|x64
+		{8790F333-C012-41F4-9D84-3FA1E742525F}.Release|x86.ActiveCfg = Release|Win32
+		{8790F333-C012-41F4-9D84-3FA1E742525F}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {54FBA2A0-DD73-4089-A7DB-3230C8141358}
+	EndGlobalSection
+EndGlobal

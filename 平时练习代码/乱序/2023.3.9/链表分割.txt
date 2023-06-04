@@ -1,0 +1,40 @@
+/*
+struct ListNode {
+    int val;
+    struct ListNode *next;
+    ListNode(int x) : val(x), next(NULL) {}
+};*/
+class Partition {
+public:
+    ListNode* partition(ListNode* pHead, int x) {
+        // write code here
+       struct ListNode *smallhead,*smalltail;
+       struct ListNode *bighead,*bigtail;
+       smallhead=smalltail=(struct ListNode*)malloc(sizeof(struct ListNode));
+       bighead=bigtail=(struct ListNode*)malloc(sizeof(struct ListNode));
+       smalltail->next=NULL;
+       bigtail->next=NULL;
+       struct ListNode *cur=pHead;
+       while(cur)
+       {
+        if(cur->val<x)
+        {
+            smalltail->next=cur;
+            smalltail=smalltail->next;
+        }
+        else
+        {
+            bigtail->next=cur;
+            bigtail=bigtail->next;
+        }
+        cur=cur->next;
+       }
+       smalltail->next=bighead->next;
+       bigtail->next=NULL;
+       pHead=smallhead->next;
+        free(bighead);
+        free(smallhead);
+       return pHead;
+
+    }
+};

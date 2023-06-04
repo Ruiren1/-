@@ -1,0 +1,9 @@
+﻿  mian.cpp
+E:\gitee\zyt\代码\C++代码\学习代码\vector模拟实现\vector.h(175,19): warning C4244: “return”: 从“__int64”转换到“int”，可能丢失数据
+E:\gitee\zyt\代码\C++代码\学习代码\vector模拟实现\vector.h(174): message : 在编译 类 模板 成员函数“int zyt::vector<int>::size(void) const”时
+E:\gitee\zyt\代码\C++代码\学习代码\vector模拟实现\vector.h(92): message : 查看对正在编译的函数 模板 实例化“int zyt::vector<int>::size(void) const”的引用
+E:\gitee\zyt\代码\C++代码\学习代码\vector模拟实现\vector.h(191): message : 查看对正在编译的 类 模板 实例化“zyt::vector<int>”的引用
+E:\gitee\zyt\代码\C++代码\学习代码\vector模拟实现\vector.h(171,27): warning C4244: “return”: 从“__int64”转换到“int”，可能丢失数据
+E:\gitee\zyt\代码\C++代码\学习代码\vector模拟实现\vector.h(170): message : 在编译 类 模板 成员函数“int zyt::vector<int>::capacity(void) const”时
+E:\gitee\zyt\代码\C++代码\学习代码\vector模拟实现\vector.h(112): message : 查看对正在编译的函数 模板 实例化“int zyt::vector<int>::capacity(void) const”的引用
+  vector模拟实现.vcxproj -> E:\gitee\zyt\代码\C++代码\学习代码\vector模拟实现\x64\Debug\vector模拟实现.exe

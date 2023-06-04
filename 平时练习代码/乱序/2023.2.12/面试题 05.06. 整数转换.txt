@@ -1,0 +1,13 @@
+int convertInteger(int A, int B){
+    unsigned int n=A^B;
+    int count=0;
+    while(n)
+    {
+        if((n&1)!=0)
+        {
+            count++;
+        }
+        n=n>>1;
+    }
+    return count;
+}

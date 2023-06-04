@@ -1,0 +1,4 @@
+﻿  text1.c
+C:\Users\ruiren\source\repos\C\text1\text1\text1.c(6,2): warning C4013: “print”未定义；假设外部返回 int
+C:\Users\ruiren\source\repos\C\text1\text1\text1.c(16): warning C4716: “print”: 必须返回一个值
+  text1.vcxproj -> C:\Users\ruiren\source\repos\C\text1\x64\Debug\text1.exe

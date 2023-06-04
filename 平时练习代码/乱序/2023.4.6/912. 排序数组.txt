@@ -1,0 +1,42 @@
+/**
+ * Note: The returned array must be malloced, assume caller calls free().
+ */
+ void Swap(int* a, int* b)
+{
+	int temp = *a;
+	*a = *b;
+	*b = temp;
+}
+ void ShellSort(int* a, int n)
+{
+	int gap=n;
+	while (gap > 1)
+	{
+		gap = gap / 3 + 1;
+		for (int i = 0; i < n - gap; i++)
+		{
+			int end = i;
+			int temp = a[end + gap];
+			while (end >= 0)
+			{
+				if (a[end] > temp)
+				{
+					a[end + gap] = a[end];
+					end -= gap;
+				}
+				else
+				{
+					break;
+				}
+			}
+			a[end + gap] = temp;
+		}	
+	}
+}
+
+
+int* sortArray(int* nums, int numsSize, int* returnSize){
+    ShellSort(nums,numsSize);
+    *returnSize=numsSize;
+    return nums;
+}

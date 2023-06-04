@@ -1,0 +1,67 @@
+
+#include <iostream>
+using namespace std;
+
+class Cube {
+
+    // write your code here.....
+private:
+    int length;
+    int width;
+    int height;
+public:
+    void setLength(int l)
+    {
+        length = l;
+    }
+    void setWidth(int w)
+    {
+        width = w;
+    }
+    void setHeight(int h)
+    {
+        height = h;
+    }
+    int getLength()
+    {
+        return length;
+    }
+    int getHeight()
+    {
+        return height;
+    }
+    int getWidth()
+    {
+        return width;
+    }
+    int getArea()
+    {
+        return 2 * (length * width + length * height + width * height);;
+    }
+    int getVolume()
+    {
+        return length * width * height;
+    }
+
+};
+
+int main() {
+
+    int length, width, height;
+    cin >> length;
+    cin >> width;
+    cin >> height;
+
+    Cube c;
+    c.setLength(length);
+    c.setWidth(width);
+    c.setHeight(height);
+
+    cout << c.getLength() << " "
+        << c.getWidth() << " "
+        << c.getHeight() << " "
+        << c.getArea() << " "
+        << c.getVolume() << endl;
+
+    return 0;
+}

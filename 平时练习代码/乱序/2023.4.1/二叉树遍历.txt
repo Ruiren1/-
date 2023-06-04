@@ -1,0 +1,62 @@
+#include <stdio.h>
+#include<stdlib.h>
+
+typedef struct BinaryTreeNoDe
+{
+	char data;
+	struct BinaryTreeNoDe* left;
+	struct BinaryTreeNoDe* right;
+}BTNode;
+
+BTNode* CreatBinaryTree(char *s,int *pi)
+{
+    if(s[*pi]=='#')
+    {
+        (*pi)++;
+        return NULL;
+    }
+    BTNode*root=(BTNode*)malloc(sizeof(BTNode));
+
+    root->data=s[(*pi)++];
+    root->left=CreatBinaryTree(s,pi);
+    root->right=CreatBinaryTree(s,pi);
+
+    return root;
+}
+void InOrder(BTNode* root)
+{
+	if (root == NULL)
+	{
+		return;
+	}
+	InOrder(root->left);
+	printf("%c ", root->data);
+	InOrder(root->right);
+
+}
+int main() {
+    char s[100];
+    scanf("%s",s);
+    int i=0;
+    BTNode*root=CreatBinaryTree(s,&i);
+    InOrder(root);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

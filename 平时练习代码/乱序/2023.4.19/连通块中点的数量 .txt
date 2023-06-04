@@ -1,0 +1,63 @@
+#include<iostream>
+using namespace std;
+
+const int N=100010;
+int f[N];
+int cnt[N];
+
+int find(int x)
+{
+    if(f[x]==x)
+    {
+        return x;
+    }
+    return f[x]=find(f[x]);
+}
+
+void unionset(int x,int y)
+{
+    cnt[find(y)]+=cnt[find(x)];
+    f[find(x)]=find(y);
+     
+}
+
+int main()
+{
+    int n,m;
+    cin>>n>>m;
+    for(int i=1;i<=n;i++)
+    {
+        f[i]=i;
+        cnt[i]=1;
+    }
+    while(m--)
+    {
+        int a,b;
+        string c;
+        cin>>c;
+        if(c=="C")
+        {
+            cin>>a>>b;
+            if(find(a)==find(b))
+            continue;
+            unionset(a,b);
+        }
+        else if (c == "Q1")
+        {
+            cin >> a >> b;
+            cout << (find(a) == find(b) ? "Yes" : "No") << endl;
+        } 
+        else 
+        {
+            cin >> a;
+            cout << cnt[find(a)] << endl;
+        }
+    }
+}
+
+
+
+
+
+
+

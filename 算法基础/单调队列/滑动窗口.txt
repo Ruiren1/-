@@ -1,0 +1,66 @@
+#include<iostream>
+#include<deque>
+#include<cstring>
+#include<algorithm>
+using namespace std;
+
+const int N=1000010;
+int n,k;
+int a[N];
+int main()
+{
+    cin>>n>>k;
+    deque<int> q;
+    for(int i=1;i<=n;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+    for(int i=1;i<=n;i++)
+    {
+        while(q.size()&&q.back()>a[i])
+        q.pop_back();
+        q.push_back(a[i]);
+        if(i-k>=1&&q.front()==a[i-k])
+        {
+            q.pop_front();
+        }
+        if(i>=k)
+        {
+            cout<<q.front()<<" ";
+        }
+        
+    }
+    q.clear();
+    cout << endl;
+    for(int i=1;i<=n;i++)
+    {
+        while(q.size()&&q.back()<a[i])
+        q.pop_back();
+        q.push_back(a[i]);
+        if(i-k>=1&&q.front()==a[i-k])
+        {
+            q.pop_front();
+        }
+        if(i>=k)
+        {
+            cout<<q.front()<<" ";
+        }
+        
+    }
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

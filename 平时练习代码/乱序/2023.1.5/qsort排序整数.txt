@@ -1,0 +1,21 @@
+#include<stdio.h>
+#include<string.h>
+#include<stdlib.h>
+int cmp_int(const void* e1, const void* e2)
+{
+	return *(int*)e1 - *(int*)e2;
+}
+int main()
+{
+	int a[10]{ 10,9,8,7,6,5,4,3,2,1 };
+	char s[20] = "HelloWorld";
+	float f = 3.14;
+	int i;
+	qsort((void*)a, sizeof(a) / sizeof(a[0]), sizeof(int), cmp_int);
+	for (i = 0; i < sizeof(a) / sizeof(a[0]); i++)
+	{
+		printf("%d", (*(int*)a+i));
+	}
+	
+
+}

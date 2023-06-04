@@ -1,0 +1,4 @@
+﻿  字符串匹配BF和kmp.c
+C:\Users\ruiren\source\repos\算法\字符串匹配BF和kmp\字符串匹配BF和kmp\字符串匹配BF和kmp.c(5,15): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+C:\Users\ruiren\source\repos\算法\字符串匹配BF和kmp\字符串匹配BF和kmp\字符串匹配BF和kmp.c(6,15): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+  字符串匹配BF和kmp.vcxproj -> C:\Users\ruiren\source\repos\算法\字符串匹配BF和kmp\x64\Debug\字符串匹配BF和kmp.exe

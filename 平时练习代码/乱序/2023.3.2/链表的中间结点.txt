@@ -1,0 +1,21 @@
+struct ListNode* middleNode(struct ListNode* head){
+        struct ListNode*cur=head;
+        int count=0;
+        while(cur)
+        {
+            count++;
+            cur=cur->next;
+        }
+
+        
+        cur=head;
+        int i=count/2;
+        while(i)
+        {
+            cur=cur->next;
+            --i;
+        }
+        
+      
+        return cur;
+}

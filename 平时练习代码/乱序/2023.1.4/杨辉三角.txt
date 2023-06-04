@@ -1,0 +1,32 @@
+void yangHuiTriangle(int n)
+{
+	int data[30][30] = { 1 }; //第一行直接填好，播下种子
+
+	int i, j;
+	for (i = 1; i < n; i++)
+	{
+		data[i][0] = 1;
+		for (j = 1; j < n; j++)
+		{
+			data[i][j] = data[i - 1][j] + data[i - 1][j - 1];
+		}
+	}
+
+	for (i = 0; i < n; i++) //填完打印
+	{
+		for (j = 0; j <= i; j++)
+		{
+			printf("%d ", data[i][j]);
+		}
+		putchar('\n');
+	}
+}
+int main()
+{
+	
+	yangHuiTriangle(5);
+
+    
+   
+
+}

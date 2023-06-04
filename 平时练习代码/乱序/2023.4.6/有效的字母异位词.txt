@@ -1,0 +1,21 @@
+
+class Solution {
+public:
+    bool isAnagram(string s, string t) {
+        vector<int> hash1(26),hash2(26);
+
+        for(auto &i: s)
+        {
+            ++hash1[i-'a'];
+        }
+         for(auto &i: t)
+        {
+            ++hash2[i-'a'];
+        }
+        if(hash1==hash2)
+        {
+            return true;
+        }
+        return false;
+    }
+};

@@ -1,0 +1,58 @@
+#include<iostream>
+
+using namespace std;
+
+const int N=20;
+int pos[N];
+int n;
+int c[N];//列
+int p[N];//正对角线
+int a[N];//反对角线
+
+void print()
+{
+    for(int k=1;k<=n;k++)
+    {
+        for(int p=1;p<=n;p++)
+        {
+            if(p!=pos[k])
+            {
+                cout<<".";
+            }
+            else
+            {
+                cout<<"Q";
+            }
+        }
+        puts("");
+    }
+    puts(" ");
+}
+void dfs(int i)
+{
+    if(i>n)
+    {
+        print();
+        return;
+    }
+    
+    for(int j=1;j<=n;j++)
+    {
+        if(c[j]||p[i+j]||a[i-j+n])
+        {
+            continue;
+        }
+        c[j]=p[i+j]=a[i-j+n]=1;
+        pos[i]=j;
+        dfs(i+1);
+        c[j]=p[i+j]=a[i-j+n]=0;
+    }
+}
+
+
+
+int main()
+{
+    cin>>n;
+    dfs(1);
+}

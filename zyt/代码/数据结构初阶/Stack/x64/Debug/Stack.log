@@ -1,0 +1,6 @@
+﻿D:\VS\MSBuild\Current\Bin\amd64\Microsoft.Common.CurrentVersion.targets(5599,5): warning MSB3061: 无法删除文件“C:\Users\ruiren\source\repos\数据结构初阶\Stack\x64\Debug\Stack.exe”。对路径“C:\Users\ruiren\source\repos\数据结构初阶\Stack\x64\Debug\Stack.exe”的访问被拒绝。
+D:\VS\MSBuild\Microsoft\VC\v170\Microsoft.CppClean.targets(77,5): warning : 对路径“c:\users\ruiren\source\repos\数据结构初阶\stack\x64\debug\stack.exe”的访问被拒绝。
+  Stack.c
+  Text.c
+  正在生成代码...
+LINK : fatal error LNK1104: 无法打开文件“C:\Users\ruiren\source\repos\数据结构初阶\Stack\x64\Debug\Stack.exe”

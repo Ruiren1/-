@@ -1,0 +1,25 @@
+
+class A
+{
+public:
+    static int count;
+    static int sum;
+    A()
+    {
+        count++;
+        sum+=count;
+    }
+};
+int A::count=0;
+int A::sum=0;
+class Solution {
+public:
+    
+    int Sum_Solution(int n) {
+        
+        A nums[n];
+        return A::sum;
+    }
+   
+};
+

@@ -1,0 +1,34 @@
+#include<iostream>
+using namespace std;
+#define N 100010
+int S[N],B[N];
+
+void insert(int l,int r,int c)
+{
+    B[l]+=c;
+    B[r+1]-=c;
+}
+int main()
+{
+    int i;
+    int n,m,l,r,c;
+    cin>>n>>m;
+    for(i=1;i<=n;i++)
+    {
+        scanf("%d",&S[i]);
+        B[i]=S[i]-S[i-1];
+    }
+    while(m--)
+    {
+        cin>>l>>r>>c;
+        insert(l,r,c);
+    }
+    for(i=1;i<=n;++i)
+    {
+        S[i]=S[i-1]+B[i];
+        cout<<S[i]<<" ";
+    }
+    return 0;
+    
+}
+

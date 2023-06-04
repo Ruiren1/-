@@ -1,0 +1,13 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+
+    // write your code here......
+    char c;
+    int a;
+    long l;
+    double d;
+    cout<<sizeof(c)<<endl<<sizeof(a)<<endl<<sizeof(l)<<endl<<sizeof(d) <<endl;
+    return 0;
+}

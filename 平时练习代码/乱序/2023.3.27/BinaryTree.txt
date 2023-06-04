@@ -1,0 +1,87 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<assert.h>
+typedef int BTDatatype;
+typedef struct BinaryTreeNoDe
+{
+	BTDatatype data;
+	struct BinaryTreeNoDe* left;
+	struct BinaryTreeNoDe* right;
+}BTNode;
+
+void PreOrder(BTNode* root)
+{
+	if (root == NULL)
+	{
+		printf("NULL ");
+		return NULL;
+	}
+	printf("%d ", root->data);
+	PreOrder(root->left);
+	PreOrder(root->right);
+}
+
+void InOrder(BTNode* root)
+{
+	if (root == NULL)
+	{
+		printf("NULL ");
+		return NULL;
+	}
+	InOrder(root->left);
+	printf("%d ", root->data);
+	InOrder(root->right);
+
+}
+
+void PostOrder(BTNode* root)
+{
+	if (root == NULL)
+	{
+		printf("NULL ");
+		return NULL;
+	}
+	InOrder(root->left);
+	InOrder(root->right);
+	printf("%d ", root->data);
+}
+
+BTNode* BuyNode(BTDatatype a)
+{
+	BTNode* node = (BTNode*)malloc(sizeof(struct BinaryTreeNoDe));
+	assert(node);
+	node->data = a;
+	assert(node);
+	return node;
+}
+BTNode* CreatBinaryTree()
+{
+	BTNode* node1 = BuyNode(1);
+	BTNode* node2 = BuyNode(2);
+	BTNode* node3 = BuyNode(3);
+	BTNode* node4 = BuyNode(4);
+	BTNode* node5 = BuyNode(5);
+	BTNode* node6 = BuyNode(6);
+	node1->left = node2;
+	node1->right = node4;
+	node2->left = node3;
+	node4->left = node5;
+	node4->right = node6;
+	node2->right = NULL;
+	node3->left = NULL;
+	node3->right = NULL;
+	node5->left = NULL;
+	node5->right = NULL;
+	node6->left = NULL;
+	node6->right = NULL;
+	return node1;
+}
+int main()
+{
+	BTNode* node1 = CreatBinaryTree();
+	PreOrder(node1);
+	printf("\n");
+	InOrder(node1);
+	printf("\n");
+	PostOrder(node1);
+}

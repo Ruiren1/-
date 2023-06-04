@@ -1,0 +1,28 @@
+int getsum(int x)
+{
+    int sum=0;
+    while(x)
+    {
+        sum+=pow(x%10,2);
+        x/=10;
+    }
+    return sum;
+}
+bool isHappy(int n){
+    int hash[1000]={0};
+    int sum;
+    sum=getsum(n);
+    while(sum!=1)
+    {
+        if(hash[sum]!=1)
+        {
+            hash[sum]=1;
+        }
+        else
+        {
+            return false;
+        }
+        sum=getsum(sum);
+    }
+    return true;
+}

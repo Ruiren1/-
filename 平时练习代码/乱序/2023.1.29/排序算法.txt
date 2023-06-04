@@ -1,0 +1,136 @@
+#include<stdio.h>
+
+void ArrPrintf(int* a, int m)
+{
+	for (int i = 0; i < m; i++)
+	{
+		printf("%d  ", a[i]);
+	}
+}
+void Swap(int* a, int* b)
+{
+	int temp;
+	temp = *a;
+	*a = *b;
+	*b = temp;
+}
+void InsertSort(int* a, int m)
+{
+	int i;
+	for (i = 0; i < m - 1; ++i)
+	{
+		int end = i;
+		int temp = a[end + 1];
+		while (end >= 0)
+		{
+			if (a[end] > temp)
+			{
+				a[end + 1] = a[end];
+				end--;
+			}
+			else
+			{
+				break;
+			}
+		}
+		a[end + 1] = temp;
+	}
+}
+void ShellSort(int *a, int m)
+{
+	int gap=m;
+	while(gap>1)
+	{
+		gap = gap / 3 + 1;
+		for (int i = 0; i < m - gap; i++)
+		{
+			int end = i;
+			int temp = a[end + gap];
+			while (end >= 0)
+			{
+				if (a[end] > temp)
+				{
+					a[end + gap] = a[end];
+					end -= gap;
+				}
+				else
+				{
+					break;
+				}
+			}
+			a[end + gap] = temp;
+		}
+	}
+}
+
+void SelectSort(int* a, int m)
+{
+	int begin = 0;
+	int end = m - 1;
+	while (begin < end)
+	{
+		int maxi = begin;
+		int mini = begin;
+		for (int i = begin; i <= end; i++)
+		{
+			if (a[maxi] < a[i])
+			{
+				maxi = i;
+			}
+			if (a[mini] > a[i])
+			{
+				mini = i;
+			}
+		}
+		Swap(&a[begin], &a[mini]);
+		Swap(&a[end], &a[maxi]);
+		begin++;
+		end--;
+	}
+}
+void AdjustDown(int* a, int n, int root)
+{
+	int parent = root;
+	int child = parent * 2 + 1;
+	while (child<n)
+	{
+		if (child + 1 < n&&a[child + 1] > a[child])
+		{
+			++child;
+		}
+		if (a[child] > a[parent])
+		{
+			Swap(&a[child], &a[parent]);
+			parent = child;
+			child = parent * 2 + 1;
+		}
+		else
+		{
+			break;
+		}
+	}
+}
+void HeapSort(int* a, int n)
+{
+	//建堆
+	int i;
+	int end = n - 1;
+	for (i = (n - 1 - 1) / 2; i >= 0; --i)
+	{
+		AdjustDown(a, n, i); 
+	}
+	while (end > 0)
+	{
+	    Swap(a, &a[end]);
+		end--;
+		AdjustDown(a, end+1, 0);
+	}
+	
+}
+
+int main()
+{
+	int a[] = { 3,5,2,7,8,6,1,9,4,0 };
+	SelectSort(a, sizeof(a) / sizeof(int));
+	ArrPrintf(a, sizeof(a) / sizeof(int));
+}

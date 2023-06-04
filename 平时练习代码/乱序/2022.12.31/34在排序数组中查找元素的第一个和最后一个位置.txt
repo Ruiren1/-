@@ -1,0 +1,35 @@
+/**
+ * Note: The returned array must be malloced, assume caller calls free().
+ */
+int* searchRange(int* nums, int numsSize, int target, int* returnSize){
+    int l1 = 0,l2 = 0, r1 = numsSize - 1, r2 = numsSize - 1, lmid, rmid;
+    *returnSize = 2;
+    int *a = malloc(sizeof(int)*2);
+    while(l1 < r1)
+    {
+        lmid = r1 + l1 >> 1;
+        if(nums[lmid] >= target)
+            r1 = lmid;
+        else
+            l1 = lmid + 1;
+    }//二分查找最左边的临界值
+    while(l2 < r2)
+    {
+        rmid = r2 + l2 + 1 >> 1;
+        if(nums[rmid] <= target)
+            l2 = rmid;
+        else 
+            r2 = rmid - 1;
+    }//二分查找最右边的临界值
+    if(numsSize == 0)
+    {
+        a[0] = -1;
+        a[1] = -1;
+    }//将nums==[]的情况单独出来，否则会报错
+    else
+    {
+        a[0] = nums[l1] == target? l1:-1;
+        a[1] = nums[l2] == target? l2:-1;
+    }//如果找到的话就返回两个临界值，没找到就返回-1
+    return a;
+}
